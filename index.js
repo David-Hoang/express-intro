@@ -1,5 +1,5 @@
 import express from 'express';
-import movies from './resources/movies.js';
+import pokemons from './resources/pokemons.js';
 
 const app = express();
 const port = 3000;
@@ -9,8 +9,8 @@ app.get('/', (request, response) => {
     return response.end('Welcome to my first APIs');
 })
 
-app.get('/movies', (request, response) => {
-    return response.json(movies);
+app.get('/all-pokemon', (request, response) => {
+    return response.json(pokemons);
 })
 
 app.listen(port, () => {
