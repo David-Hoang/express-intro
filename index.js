@@ -15,9 +15,9 @@ app.get('/all-pokemon', (request, response) => {
 
 app.get('/pokemon/:id', (request, response) => {
     let pokemonId = parseInt(request.params.id);
-    
-    if(pokemonId && pokemons.find(pokemon => pokemon.id === pokemonId)){
-        let pokemonById = pokemons.find(pokemon => pokemon.id === pokemonId);
+    let pokemonById = pokemons.find(pokemon => pokemon.id === pokemonId);
+
+    if(pokemonId && pokemonById){
         return response.status(200).json(pokemonById);
     }else{
         return response.status(404).json({error : 404, message : 'Pokemon not found'});
